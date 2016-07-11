@@ -1,0 +1,12 @@
+;
+; {{HEADER}}
+;
+$TTL        {{TTL}}
+@           IN      SOA   ns1.{{DOMAIN}}. postmaster.{{DOMAIN}}. (
+                          1        ; Serial
+                          3h       ; Refresh after 3 hours
+                          1h       ; Retry after 1 hour
+                          1w       ; Expire after 1 week
+                          1h       ; Negative caching TTL of 1 day
+)
+@           IN      NS    ns1.{{DOMAIN}}.

@@ -1,0 +1,38 @@
+options {
+	directory "/var/bind";
+	listen-on { any; };
+	listen-on-v6 { none; };
+	pid-file "/var/run/named/named.pid";
+	allow-recursion { any; };
+	allow-query { any; };
+	allow-transfer { none; };
+};
+
+zone "{{DOMAIN}}" IN {
+	type master;
+	file "master/{{DOMAIN}}.db";
+};
+
+zone "{{REVERSE}}.in-addr.arpa" IN {
+    type master;
+    file "master/{{REVERSE}}.db";
+};
+
+zone "." IN {
+	type hint;
+	file "named.ca";
+};
+
+zone "localhost" IN {
+	type master;
+	file "pri/localhost.zone";
+	allow-update { none; };
+	notify no;
+};
+
+zone "127.in-addr.arpa" IN {
+	type master;
+	file "pri/127.zone";
+	allow-update { none; };
+	notify no;
+};
