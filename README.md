@@ -4,6 +4,8 @@ An authoritative and recursive DNS server with dynamic configuration.
 
 **Note:** Only for local usage! Do not use this server on untrusted networks.
 
+[![Docker Repository on Quay](https://quay.io/repository/jcmoraisjr/simple-dns/status "Docker Repository on Quay")](https://quay.io/repository/jcmoraisjr/simple-dns)
+
 # Usage
 
 Run the DNS server:
